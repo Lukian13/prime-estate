@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Estate</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header>
+
+    <div class="logo">
+         Prime Estate
+    </div>
+
+    <nav>
+
+        <a href="#home">Головна</a>
+        <a href="#catalog">Каталог</a>
+        <a href="#about">Про нас</a>
+        <a href="#contact">Контакти</a>
+
+    </nav>
+
+    <button class="consult-btn" onclick="scrollToSection('contact')">
+        Консультація <button onclick="showCart()">
+     Заявки
+    <span id="cartCount">0</span>
+</button>
+    </button>
+
+</header>
+
+<section id="home" class="hero">
+
+    <div class="hero-content">
+
+        <h1>Знайдіть нерухомість своєї мрії</h1>
+
+        <p>
+            Продаж та оренда квартир, будинків і комерційної нерухомості
+        </p>
+
+        <div class="hero-buttons">
+
+            <button onclick="scrollToSection('catalog')">
+                Переглянути каталог
+            </button>
+
+            <button class="secondary-btn"
+            onclick="scrollToSection('contact')">
+                Зв'язатися
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="catalog" class="catalog">
+
+    <h2>Каталог нерухомості</h2>
+
+    <div class="filters">
+
+        <input
+        type="text"
+        id="search"
+        placeholder="Пошук..."
+        onkeyup="searchProperties()">
+
+        <select id="filterType" onchange="filterProperties()">
+            <option value="all">Усі об'єкти</option>
+            <option value="house">Будинки</option>
+            <option value="apartment">Квартири</option>
+            <option value="commercial">Комерційна</option>
+        </select>
+
+    </div>
+
+    <div class="cards">
+
+        <!-- Будинок -->
+
+        <div class="card house">
+
+            <img src="./images/villa.avif">
+
+            <div class="card-content">
+
+                <h3>Сучасна Вілла</h3>
+
+                <p>Львів • 220 м²</p>
+
+                <div class="price">$280 000</div>
+
+                <div class="card-buttons">
+
+                    <button onclick="buyProperty('Сучасна Вілла')">
+                        Купити
+                    </button>
+
+                    <button class="rent-btn"
+                    onclick="rentProperty('Сучасна Вілла')">
+                        Орендувати
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Будинок -->
+
+        <div class="card house">
+
+            <img src="./images/cottage.jpg">
+
+            <div class="card-content">
+
+                <h3>Котедж Premium</h3>
+
+                <p>Трускавець • 180 м²</p>
+
+                <div class="price">$195 000</div>
+
+                <div class="card-buttons">
+
+                    <button onclick="buyProperty('Котедж Premium')">
+                        Купити
+                    </button>
+
+                    <button class="rent-btn"
+                    onclick="rentProperty('Котедж Premium')">
+                        Орендувати
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Квартира -->
+
+        <div class="card apartment">
+
+            <img src="./images/penthous.jpg">
+
+            <div class="card-content">
+
+                <h3>Пентхаус</h3>
+
+                <p>Київ • 160 м²</p>
+
+                <div class="price">$420 000</div>
+
+                <div class="card-buttons">
+
+                    <button onclick="buyProperty('Пентхаус')">
+                        Купити
+                    </button>
+
+                    <button class="rent-btn"
+                    onclick="rentProperty('Пентхаус')">
+                        Орендувати
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Квартира -->
+
+        <div class="card apartment">
+
+            <img src="./images/flat.jpg">
+
+            <div class="card-content">
+
+                <h3>2-Кімнатна квартира</h3>
+
+                <p>Львів • 75 м²</p>
+
+                <div class="price">$95 000</div>
+
+                <div class="card-buttons">
+
+                    <button onclick="buyProperty('2-Кімнатна квартира')">
+                        Купити
+                    </button>
+
+                    <button class="rent-btn"
+                    onclick="rentProperty('2-Кімнатна квартира')">
+                        Орендувати
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Комерційна -->
+
+        <div class="card commercial">
+
+            <img src="./images/office centre.jpg">
+
+            <div class="card-content">
+
+                <h3>Офісний центр</h3>
+
+                <p>Київ • 400 м²</p>
+
+                <div class="price">$550 000</div>
+
+                <div class="card-buttons">
+
+                    <button onclick="buyProperty('Офісний центр')">
+                        Купити
+                    </button>
+
+                    <button class="rent-btn"
+                    onclick="rentProperty('Офісний центр')">
+                        Орендувати
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- Комерційна -->
+
+        <div class="card commercial">
+
+            <img src="./images/square.webp">
+
+            <div class="card-content">
+
+                <h3>Торгова площа</h3>
+
+                <p>Львів • 250 м²</p>
+
+                <div class="price">$290 000</div>
+
+                <div class="card-buttons">
+
+                    <button onclick="buyProperty('Торгова площа')">
+                        Купити
+                    </button>
+
+                    <button class="rent-btn"
+                    onclick="rentProperty('Торгова площа')">
+                        Орендувати
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section id="about" class="about">
+
+    <h2>Про компанію</h2>
+
+    <p>
+        Prime Estate працює на ринку нерухомості понад 10 років.
+        Ми допомагаємо купувати, продавати та орендувати житло
+        по всій Україні.
+    </p>
+
+</section>
+
+<section class="stats">
+
+    <div>
+        <h3>1500+</h3>
+        <p>Проданих об'єктів</p>
+    </div>
+
+    <div>
+        <h3>5000+</h3>
+        <p>Клієнтів</p>
+    </div>
+
+    <div>
+        <h3>10+</h3>
+        <p>Років досвіду</p>
+    </div>
+
+</section>
+
+<section id="contact" class="contact">
+
+    <h2>Залишити заявку</h2>
+
+    <form>
+
+        <input type="text" placeholder="Ваше ім'я">
+
+        <input type="email" placeholder="Email">
+
+        <textarea placeholder="Ваше повідомлення"></textarea>
+
+        <button type="button" onclick="sendForm()">
+            Надіслати
+        </button>
+
+    </form>
+
+</section>
+
+<footer>
+
+    <h3>Prime Estate</h3>
+
+    <p>Телефон: +380 67 123 45 67</p>
+
+    <p>Email: info@primeestate.ua</p>
+
+    <div class="footer-buttons">
+
+    <button onclick="showCart()">
+        Переглянути заявки
+    </button>
+
+    <button onclick="clearCart()">
+        Очистити заявки
+    </button>
+
+</div>
+
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
