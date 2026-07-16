@@ -4,131 +4,140 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prime Estate</title>
+    <title>Prime Estate | Елітна нерухомість в Україні</title>
 
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-    <header>
+    <header class="header">
+        <div class="logo">Prime<span>Estate</span></div>
 
-        <div class="logo">
-            Prime Estate
-        </div>
-
-        <nav>
-            <a href="index.html">Головна</a>
+        <nav class="nav">
+            <a href="index.html" class="active">Головна</a>
             <a href="catalog.html">Каталог</a>
             <a href="#about">Про нас</a>
-            <a href="#contact">Контакти</a>
         </nav>
 
-        <button class="consult-btn" onclick="scrollToSection('contact')">
-            Консультація <button onclick="showCart()">
-                Заявки
-                <span id="cartCount">0</span>
+        <div class="header-buttons">
+            <button class="consult-btn" onclick="scrollToSection('contact')">
+                Консультація
             </button>
-        </button>
 
+            <button class="cart-btn" onclick="showCart()">
+                Заявки <span id="cartCount">0</span>
+            </button>
+        </div>
     </header>
 
-    <section id="home" class="hero">
+    <main>
+        <section id="home" class="hero">
+            <div class="hero-content">
+                <h1>Знайдіть нерухомість своєї мрії</h1>
+                <p>Продаж та оренда квартир, будинків і комерційної нерухомості без зайвих турбот.</p>
+                <button class="cta-btn" onclick="scrollToSection('contact')">Обрати житло</button>
+            </div>
+        </section>
 
-        <div class="hero-content">
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-text">
+                    <h2>Про компанію</h2>
+                    <p>
+                        <strong>Prime Estate</strong> працює на ринку нерухомості понад 10 років. 
+                        Ми допомагаємо купувати, продавати та орендувати житло по всій Україні, гарантуючи безпеку кожної угоди.
+                    </p>
+                </div>
 
-            <h1>Знайдіть нерухомість своєї мрії</h1>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="icon">🏠</div>
+                        <h3>Великий вибір</h3>
+                        <p>Понад 1500 актуальних та перевірених пропозицій.</p>
+                    </div>
 
-            <p>
-                Продаж та оренда квартир, будинків і комерційної нерухомості
-            </p>
+                    <div class="feature-card">
+                        <div class="icon">💰</div>
+                        <h3>Вигідні ціни</h3>
+                        <p>Прозора цінова політика без прихованих комісій.</p>
+                    </div>
 
+                    <div class="feature-card">
+                        <div class="icon">🤝</div>
+                        <h3>Надійність</h3>
+                        <p>Професійний юридичний супровід та безпека угод.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <section class="stats">
+            <div class="stats-container">
+                <div class="stat-item">
+                    <h3>1500+</h3>
+                    <p>Проданих об'єктів</p>
+                </div>
+
+                <div class="stat-item">
+                    <h3>5000+</h3>
+                    <p>Щасливих клієнтів</p>
+                </div>
+
+                <div class="stat-item">
+                    <h3>10+</h3>
+                    <p>Років досвіду</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <div class="contact-box">
+                <h2>Залишити заявку</h2>
+                <p>Заповніть форму, і наш менеджер зв'яжеться з вами протягом 15 хвилин.</p>
+                
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                    <div class="input-group">
+                        <input type="text" id="name" placeholder="Ваше ім'я" required>
+                    </div>
+                    <div class="input-group">
+                        <input type="email" id="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-group">
+                        <textarea id="message" placeholder="Яка саме нерухомість вас цікавить?" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Надіслати</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <h3>Prime<span>Estate</span></h3>
+                <p>Ваш надійний партнер у світі нерухомості.</p>
+            </div>
+            <div class="footer-contacts">
+                <p>📞 <a href="tel:+380671234567">+380 67 123 45 67</a></p>
+                <p>✉ <a href="mailto:info@primeestate.ua">info@primeestate.ua</a></p>
+            </div>
+            <div class="socials">
+                <a href="#" aria-label="Facebook">Facebook</a>
+                <a href="#" aria-label="Instagram">Instagram</a>
+                <a href="#" aria-label="Telegram">Telegram</a>
+            </div>
         </div>
-
-    </section>
-
-
-
-    <section id="about" class="about">
-
-        <h2>Про компанію</h2>
-
-        <p>
-            Prime Estate працює на ринку нерухомості понад 10 років.
-            Ми допомагаємо купувати, продавати та орендувати житло
-            по всій Україні.
-        </p>
-
-    </section>
-
-    <section class="stats">
-
-        <div>
-            <h3>1500+</h3>
-            <p>Проданих об'єктів</p>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Prime Estate. Всі права захищені.</p>
         </div>
-
-        <div>
-            <h3>5000+</h3>
-            <p>Клієнтів</p>
-        </div>
-
-        <div>
-            <h3>10+</h3>
-            <p>Років досвіду</p>
-        </div>
-
-    </section>
-
-    <section id="contact" class="contact">
-
-        <h2>Залишити заявку</h2>
-
-        <form>
-
-            <input type="text" placeholder="Ваше ім'я">
-
-            <input type="email" placeholder="Email">
-
-            <textarea placeholder="Ваше повідомлення"></textarea>
-
-            <button type="button" onclick="sendForm()">
-                Надіслати
-            </button>
-
-        </form>
-
-    </section>
-
-    <footer>
-
-        <h3>Prime Estate</h3>
-
-        <p>Телефон: +380 67 123 45 67</p>
-
-        <p>Email: info@primeestate.ua</p>
-
-        <div class="footer-buttons">
-
-            <button onclick="showCart()">
-                Переглянути заявки
-            </button>
-
-            <button onclick="clearCart()">
-                Очистити заявки
-            </button>
-
-        </div>
-
     </footer>
 
     <script src="script.js"></script>
-
 </body>
 
 </html>
